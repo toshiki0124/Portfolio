@@ -3,15 +3,27 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Tennis Matching</title>
+        <title>Portfolio</title>
     </head>
     <body>
-        <h1>都道府県の一覧表示</h1>
-        @foreach ($places as $place)
-                <div class='place'>
-                    <h2 class='prefecture'>{{ $place->name }}</h2>
+        <header>
+            <div class=container>
+                <h1>Portfolio</h1>
+                <a href='/register' class='enter'>新規登録</a>
+                <a href='/login' class='enter'>ログイン</a>
+            </div>
+        </header>
+        <div class='main_space'>
+            <div class='container'>
+                <div class='introduction'>
+                    <h1>適当なサイト紹介文</h1>
+                    @foreach ($users as $user)
+                            <div class='user'>
+                                <h2 class='nickname'>{{ $user->name }}</h2>
+                            </div>
+                    @endforeach
                 </div>
-        @endforeach
+            </div>
+        </div>
     </body>
 </html>

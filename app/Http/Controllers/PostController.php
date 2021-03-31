@@ -10,8 +10,8 @@ use App\Test;
 
 class PostController extends Controller
 {
-    public function index(Place $place)
+    public function index(User $user)
     {
-        return view('index')->with(['places' => $place->get()]); 
+        return view('index')->with(['users' => $user->get()]);
     }
 }
