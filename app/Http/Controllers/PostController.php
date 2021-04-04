@@ -14,4 +14,12 @@ class PostController extends Controller
     {
         return view('index')->with(['users' => $user->get()]);
     }
+    public function post(Post $post)
+    {
+        return view('post')->with(['posts' => $post->get()]);
+    }
+    public function detail(Post $post)
+    {
+        return view('detail')->with(['posts' => $post->get()]);
+    }
 }

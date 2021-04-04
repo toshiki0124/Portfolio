@@ -12,6 +12,9 @@
 */
 
 Route::get('/', "PostController@index");
+Route::get('/posts', "PostController@post");
+Route::get('/detail', "PostController@detail");
+
 
 Auth::routes();
 
