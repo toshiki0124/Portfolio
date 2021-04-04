@@ -13,15 +13,13 @@
         </header>
         <div class=post_strage>
             <div class=container>
-                @foreach ($posts as $post)
-                    <div class='post_detail'>
-                        <h2 class='title'>{{ $post->title }}</h2>
-                        <p class='prefecture'>{{ $post->place->name }}</p>
-                        <p class='prefecture'>{{ $post->detail_place }}</p>
-                        <p class='prefecture'>{{ $post->body }}</p>
-                        <p class='prefecture'>{{ $post->user->name }}</p>
-                    </div>
-                @endforeach
+                <div class='post_detail'>
+                    <h2 class='title'>{{ $post->title }}</h2>
+                    <p class='prefecture'>{{ $post->place->name }}</p>
+                    <p class='prefecture'>{{ $post->detail_place }}</p>
+                    <p class='prefecture'>{{ $post->body }}</p>
+                    <p class='prefecture'>{{ $post->user->name }}</p>
+                </div>
             </div>
         </div>
         

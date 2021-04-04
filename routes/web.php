@@ -13,7 +13,7 @@
 
 Route::get('/', "PostController@index");
 Route::get('/posts', "PostController@post");
-Route::get('/detail', "PostController@detail");
+Route::get('/posts/{post}', "PostController@detail");
 
 
 Auth::routes();

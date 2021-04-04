@@ -18,7 +18,7 @@
                 <h1>投稿一覧</h1>
                 @foreach ($posts as $post)
                     <div class='post'>
-                        <a href="/detail"><h2 class='title'>{{ $post->title }}</h2></a>
+                        <a href="/posts/{{ $post->id }}"><h2 class='title'>{{ $post->title }}</h2></a>
                     </div>
                 @endforeach
             </div>
