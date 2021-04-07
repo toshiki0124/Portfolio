@@ -14,4 +14,11 @@ class Post extends Model
     {
         return $this->belongsTo('App\User');
     }
+    protected $fillable = [
+        'title',
+        'place_id',
+        'detail_place',
+        'body',
+        'user_id',
+    ];
 }

@@ -7,6 +7,7 @@ use App\User;
 use App\Post;
 use App\Place;
 use App\Test;
+use Auth;
 
 class PostController extends Controller
 {
@@ -23,5 +24,19 @@ class PostController extends Controller
     public function detail(Post $post)
     {
         return view('detail')->with(['post' => $post]);
+    }
+
+    public function create()
+    {
+        return view('create');
+    }
+
+    public function store(Request $request, Post $post)
+    {
+        $input = $request['post'];
+        $post['user_id'] = Auth::id();
+        $post->fill($input)->save();
+        
+        return redirect('/posts/' . $post->id);
     }
 }

@@ -7,19 +7,19 @@
     </head>
     <body>
         <header>
-            <div class=container>
+            <div class="container">
                 <h1>Portfolio</h1>
-                <a href='/register' class='enter'>新規登録</a>
-                <a href='/login' class='enter'>ログイン</a>
+                <a href="/register" class="enter">新規登録</a>
+                <a href="/login" class="enter">ログイン</a>
             </div>
         </header>
-        <div class='main_space'>
-            <div class='container'>
-                <div class='introduction'>
+        <div class="main_space">
+            <div class="container">
+                <div class="introduction">
                     <h1>適当なサイト紹介文</h1>
                     @foreach ($users as $user)
-                            <div class='user'>
-                                <h2 class='nickname'>{{ $user->name }}</h2>
+                            <div class="user">
+                                <h2 class="nickname">{{ $user->name }}</h2>
                             </div>
                     @endforeach
                 </div>
