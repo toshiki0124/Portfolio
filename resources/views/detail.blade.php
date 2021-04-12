@@ -13,13 +13,18 @@
         </header>
         <div class="post_detail">
             <div class="container">
-                <h2 class="title">{{ $post->title }}</h2>
-                <p class="prefecture">{{ $post->place->name }}</p>
-                <p class="prefecture">{{ $post->detail_place }}</p>
-                <p class="prefecture">{{ $post->body }}</p>
-                <p class="prefecture">{{ $post->user->name }}</p>
+                <h2 class="title">タイトル：{{ $post->title }}</h2>
+                <p class="prefecture">都道府県 : {{ $post->place->name }}</p>
+                <p class="prefecture"> 詳細場所: {{ $post->detail_place }}</p>
+                <p class="prefecture">自由コメント : {{ $post->body }}</p>
+                <p class="prefecture">投稿者 : {{ $post->user->name }}</p>
                 <a href="/posts">戻る</a>
                 <a href="/posts/{{ $post->id }}/edit">編集</a>
+                <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method＝"POST" sytle="display:inline">
+                    @csrf 
+                    @method('DELETE')
+                    <button type="submit">削除</botton>
+                </form>
             </div>
         </div>
         

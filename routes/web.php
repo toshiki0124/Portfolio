@@ -20,15 +20,9 @@ Route::get('/posts/{post}/edit', "PostController@edit")->middleware('auth');
 
 Route::post('/posts', 'PostController@store');
 Route::put('/posts/{post}', 'PostController@update');
+Route::delete('/posts/{post}', 'PostController@delete');
 
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-/*
-Route::middleware('auth')->group(function(){
-    Route::get('/', "PostController@index");
-});
-
-Auth::routes();*/

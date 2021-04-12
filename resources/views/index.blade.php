@@ -17,11 +17,6 @@
             <div class="container">
                 <div class="introduction">
                     <h1>適当なサイト紹介文</h1>
-                    @foreach ($users as $user)
-                            <div class="user">
-                                <h2 class="nickname">{{ $user->name }}</h2>
-                            </div>
-                    @endforeach
                 </div>
             </div>
         </div>
