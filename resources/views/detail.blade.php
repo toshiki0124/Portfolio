@@ -19,6 +19,7 @@
                 <p class="prefecture">{{ $post->body }}</p>
                 <p class="prefecture">{{ $post->user->name }}</p>
                 <a href="/posts">戻る</a>
+                <a href="/posts/{{ $post->id }}/edit">編集</a>
             </div>
         </div>
         

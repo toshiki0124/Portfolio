@@ -26,9 +26,14 @@ class PostController extends Controller
         return view('detail')->with(['post' => $post]);
     }
 
-    public function create()
+    public function create(Place $place)
     {
-        return view('create');
+        return view('create')->with(['places' => $place->get()]);
+    }
+
+    public function edit(Post $post, Place $place)
+    {
+        return view('edit')->with(['post' => $post])->with(['places' => $place->get()]);
     }
 
     public function store(Request $request, Post $post)
@@ -37,6 +42,14 @@ class PostController extends Controller
         $post['user_id'] = Auth::id();
         $post->fill($input)->save();
         
+        return redirect('/posts/' . $post->id);
+    }
+
+    public function update(Request $request, Post $post)
+    {
+        $input_post = $request['post'];
+        $post->fill($input_post)->save();
+
         return redirect('/posts/' . $post->id);
     }
 }

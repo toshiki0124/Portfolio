@@ -12,11 +12,14 @@
 */
 
 Route::get('/', "PostController@index");
-Route::get('/posts', "PostController@post");
-Route::get('/posts/create', "PostController@create");
-Route::get('/posts/{post}', "PostController@detail");
+Route::get('/posts', "PostController@post")->middleware('auth');
+Route::get('/posts/create', "PostController@create")->middleware('auth');
+Route::get('/posts/{post}', "PostController@detail")->middleware('auth');
+Route::get('/posts/{post}/edit', "PostController@edit")->middleware('auth');
+
 
 Route::post('/posts', 'PostController@store');
+Route::put('/posts/{post}', 'PostController@update');
 
 
 Auth::routes();
