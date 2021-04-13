@@ -41,7 +41,7 @@
                     </div>
                     <input type="submit" value="投稿する"/>
                 </form>
-                <a class="back" href="/posts/{{ $post->id }}">戻る</a>
+                <a class="back" href="/posts/{{ $post->id }}/mypost">戻る</a>
             </div>
         </div>
     </body>

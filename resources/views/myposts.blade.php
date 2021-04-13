@@ -8,23 +8,16 @@
     <body>
         <header>
             <div class="container">
-                <h1>Portfolio</h1>
-                <a href="posts/mypage" class="enter">個人ページ</a>
-                <a href="posts/rooms" class="enter">参加ルーム</a>
+                <h1>投稿した記事</h1>
             </div>
         </header>
-        <div class="post_strage">
+        <div class="my_posts">
             <div class="container">
-                <h1>投稿一覧</h1>
                 @foreach ($posts as $post)
-                    <div class="post">
-                        <a href="/posts/{{ $post->id }}"><h2 class="title">{{ $post->title }}</h2></a>
-                    </div>
+                    <a class="title" href="/posts/{{ $post->id }}/mypost">{{ $post->title }}</a>
                 @endforeach
-                
-                <a href="/posts/create">新規投稿</a>
             </div>
+            <a class="back" href="/posts/mypage">戻る</a>
         </div>
-        
     </body>
 </html>

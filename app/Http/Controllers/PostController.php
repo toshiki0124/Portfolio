@@ -36,6 +36,29 @@ class PostController extends Controller
         return view('edit')->with(['post' => $post])->with(['places' => $place->get()]);
     }
 
+    public function mypage()
+    {
+        $auths = Auth::user();
+        return view('mypage')->with(['auths' => $auths]);
+    }
+
+    public function myposts()
+    {
+        $auths = Auth::id();
+        $posts = User::find($auths)->posts;
+        return view('myposts')->with(['posts' => $posts]);
+    }
+
+    public function mypost(Post $post, Place $place)
+    {
+        return view('mypost')->with(['post' => $post])->with(['places' => $place->get()]);
+    }
+
+    public function myedit(Post $post, Place $place)
+    {
+        return view('myedit')->with(['post' => $post])->with(['places' => $place->get()]);
+    }
+
     public function store(Request $request, Post $post)
     {
         $input = $request['post'];
