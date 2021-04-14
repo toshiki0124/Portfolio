@@ -20,7 +20,7 @@
                 <p class="prefecture">投稿者 : {{ $post->user->name }}</p>
                 <a href="/posts/myposts">戻る</a>
                 <a href="/posts/{{ $post->id }}/mypost/edit">編集</a>
-                <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method＝"POST" sytle="display:inline">
+                <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="POST" sytle="display:inline">
                     @csrf 
                     @method('DELETE')
                     <button type="submit">削除</botton>

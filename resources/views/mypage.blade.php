@@ -14,16 +14,21 @@
         </header>
         <div class="my_contents">
             <div class="container">
+                <div class="profile_image">
+                    <img src="{{ $auths->file_name }}" title="プロフィール画像">
+                </div>
                 <div class="name">
-                    <h3>{{ $auths->name }}</h3>
+                    <h3>名前:{{ $auths->name }}</h3>
                 </div>
                 <div class="body">
-                    <p>{{ $auths->body }}</p>
+                    <p>コメント:{{ $auths->body }}</p>
                 </div>
                 <div class="age">
-                    <p>{{ $auths->age }}</p>
+                    <p>年齢:{{ $auths->age }}</p>
                 </div>
                 <a class="myposts" href="/posts/myposts">投稿記事一覧</a>
+                <a class="edit" href="/posts/mypage/profile_edit">プロフィール編集</a>
+                <br>
                 <a class="back" href="/posts">戻る</a>
             </div>
         </div>

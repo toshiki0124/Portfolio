@@ -59,6 +59,12 @@ class PostController extends Controller
         return view('myedit')->with(['post' => $post])->with(['places' => $place->get()]);
     }
 
+    public function profile_edit()
+    {
+        $auths = Auth::user();
+        return view('profile_edit')->with(['auths' => $auths]);
+    }
+
     public function store(Request $request, Post $post)
     {
         $input = $request['post'];
@@ -74,6 +80,16 @@ class PostController extends Controller
         $post->fill($input_post)->save();
 
         return redirect('/posts/' . $post->id);
+    }
+
+    public function profile_update(Request $request)
+    {
+        $input_user = $request['user'];
+        $auths = Auth::user();
+        $auths->fill($input_user)->save();
+
+        return redirect('/posts/mypage');
+        
     }
 
     public function delete(Post $post)

@@ -15,6 +15,7 @@
             <div class="container">
                 @foreach ($posts as $post)
                     <a class="title" href="/posts/{{ $post->id }}/mypost">{{ $post->title }}</a>
+                    <br>
                 @endforeach
             </div>
             <a class="back" href="/posts/mypage">戻る</a>
