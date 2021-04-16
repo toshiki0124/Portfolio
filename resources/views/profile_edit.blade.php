@@ -13,9 +13,13 @@
         </header>
         <div class="my_contents">
             <div class="container">
-                <form action="/posts/mypage" method="POST">
+                <form action="/posts/mypage" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
+                    <div class="image_update">
+                        <h2>画像選択</h2>
+                        <input type="file" name="user[file_name]" accept=".png,.jpg,.jpeg,image/png,image/jpg">
+                    </div>
                     <div class="name">
                         <h2>名前</h2>
                         <input type="text" name="user[name]" value="{{ $auths->name }}">
