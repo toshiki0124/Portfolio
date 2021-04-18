@@ -15,7 +15,7 @@ class AddAgeBodyColumn extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->char('body', 200)->nullable();
-            $table->integer('age');
+            $table->integer('age')->default(20);
         });
     }
 

@@ -14,7 +14,7 @@ class AddFileNameColumn extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('file_name');
+            $table->string('file_name')->nullable();
         });
     }
 

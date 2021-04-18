@@ -19,6 +19,7 @@
                     <div class="image_update">
                         <h2>画像選択</h2>
                         <input type="file" name="user[file_name]" accept=".png,.jpg,.jpeg,image/png,image/jpg">
+                        <p>元の画像<br><img src="{{ Storage::url($auths->file_name) }}"></p>
                     </div>
                     <div class="name">
                         <h2>名前</h2>

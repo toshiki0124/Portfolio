@@ -84,15 +84,19 @@ class PostController extends Controller
 
     public function profile_update(Request $request)
     {   
+
         $input_user = $request['user'];
-        $path = $input_user['file_name']->store('public/images');
-        $filename = basename($path);
-        $input_user['file_name'] = $path;
+        if (isset($input_user['file_name'])){
+            $path = $input_user['file_name']->store('public/images');
+            $filename = basename($path);
+            $input_user['file_name'] = $path;
+        } else {
+            ;
+        }
         $auths = Auth::user();
         $auths->fill($input_user)->save();
 
         return redirect('/posts/mypage');
-        
     }
 
     public function delete(Post $post)
