@@ -23,6 +23,7 @@ Route::get('/posts/{post}/edit', 'PostController@edit')->middleware('auth');
 
 Route::post('/posts/mypage', 'PostController@image_upload');
 Route::post('/posts', 'PostController@store');
+Route::post('/posts/{post}/request', 'PostController@join_request');
 Route::put('/posts/mypage', 'PostController@profile_update');
 Route::put('/posts/{post}', 'PostController@update');
 Route::delete('/posts/{post}', 'PostController@delete');

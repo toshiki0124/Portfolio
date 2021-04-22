@@ -7,6 +7,7 @@ use App\User;
 use App\Post;
 use App\Place;
 use App\Test;
+use App\Join_request;
 use Auth;
 
 class PostController extends Controller
@@ -21,9 +22,14 @@ class PostController extends Controller
         return view('post')->with(['posts' => $post->get()]);
     }
 
-    public function detail(Post $post)
+    public function detail(Post $post, Join_request $join_request)
     {
-        return view('detail')->with(['post' => $post]);
+        $to_distinguish_number = 0;
+        $auths = Auth::user();
+        return view('detail')->with(['post' => $post])
+                             ->with(['auths' => $auths])
+                             ->with(['join_requests' => $join_request->get()])
+                             ->with(['number' => $to_distinguish_number]);
     }
 
     public function create(Place $place)
@@ -84,7 +90,6 @@ class PostController extends Controller
 
     public function profile_update(Request $request)
     {   
-
         $input_user = $request['user'];
         if (isset($input_user['file_name'])){
             $path = $input_user['file_name']->store('public/images');
@@ -103,5 +108,14 @@ class PostController extends Controller
     {
         $post->delete();
         return redirect('/posts');
+    }
+
+    public function join_request(Request $request, Join_request $join_request, Post $post)
+    {
+        $path['user_id'] = (int)$request['user_id'];
+        $path['post_id'] = $post->id;
+        $join_request->fill($path)->save();
+
+        return redirect('/posts/' . $post->id);
     }
 }

@@ -13,10 +13,12 @@ class Post extends Model
     {
         return $this->belongsTo('App\Place');
     }
+
     public function user()
     {
         return $this->belongsTo('App\User');
     }
+
     protected $fillable = [
         'title',
         'place_id',
@@ -24,6 +26,11 @@ class Post extends Model
         'body',
         'user_id',
     ];
+    
+    public function users_Manytomany()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }
 
 
