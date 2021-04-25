@@ -35,6 +35,7 @@
                     </div>
                     <br>
                     <input type="submit" value="保存する"/>
+                    <button onclick="history.back()">戻る</button>
                 </form>
             </div>
         </div>

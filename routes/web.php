@@ -22,6 +22,8 @@ Route::get('/posts/{post}', 'PostController@detail')->middleware('auth');
 Route::get('/posts/{post}/mypost', 'PostController@mypost')->middleware('auth');
 Route::get('/posts/{post}/mypost/edit', 'PostController@myedit')->middleware('auth');
 Route::get('/posts/{post}/edit', 'PostController@edit')->middleware('auth');
+Route::get('/posts/rooms/{post}/room', 'PostController@talk_room')->middleware('auth');
+Route::get('/posts/detail/host_profile/{user}', 'PostController@host_profile')->middleware('auth');
 
 Route::post('/posts/mypage', 'PostController@image_upload');
 Route::post('/posts', 'PostController@store');

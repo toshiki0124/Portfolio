@@ -41,7 +41,7 @@
                     </div>
                     <input type="submit" value="投稿する"/>
                 </form>
-                <a class="back" href="/posts/{{ $post->id }}">戻る</a>
+                <button onclick="history.back()">戻る</button>
             </div>
         </div>
     </body>

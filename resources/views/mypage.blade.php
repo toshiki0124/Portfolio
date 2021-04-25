@@ -14,11 +14,11 @@
         </header>
         <div class="my_contents">
             <div class="container">
-                <div class="profile_image">
-                    <img src="{{ Storage::url($auths->file_name) }}" title="プロフィール画像">
-                </div>
                 <div class="name">
                     <h3>名前:{{ $auths->name }}</h3>
+                </div>
+                <div class="profile_image">
+                    <img src="{{ Storage::url($auths->file_name) }}" title="プロフィール画像">
                 </div>
                 <div class="body">
                     <p>コメント:{{ $auths->body }}</p>

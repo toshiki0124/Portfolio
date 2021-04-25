@@ -37,7 +37,7 @@
                     </div>
                     <input type="submit" value="投稿する"/>
                 </form>
-                <a href="/posts">戻る</a>
+                <button onclick="history.back()">戻る</button>
             </div>
         </div>
     </body>

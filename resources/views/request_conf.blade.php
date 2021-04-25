@@ -9,7 +9,7 @@
         <header>
             <div class="container">
                 <h1>リクエスト確認ページ</h1>
-                <a class="back" href="/posts/mypage">戻る</a>
+                <button onclick="history.back()">戻る</button>
             </div>
         </header>
         <div class="requested">

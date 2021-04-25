@@ -32,6 +32,11 @@ class PostController extends Controller
                              ->with(['number' => $to_distinguish_number]);
     }
 
+    public function host_profile(User $user)
+    {
+        return view('host_profile')->with(['user' => $user]);
+    }
+
     public function create(Place $place)
     {
         return view('create')->with(['places' => $place->get()]);
@@ -130,8 +135,7 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
 
-    public function request_approval(Request $request, Join_request $join_request, Post $post,
-    Auth $auths)
+    public function request_approval(Request $request, Join_request $join_request, Post $post)
     {
         $pass['to_distinguish_number'] = (int)$request['to_distinguish_number'];
         $join_request->fill($pass)->save();
@@ -147,6 +151,16 @@ class PostController extends Controller
 
     public function show_rooms(Join_request $join_request, User $user, Post $post)
     {
-        return view('show_rooms')
+        $auths = Auth::user();
+        $myposts = $post->where('user_id', $auths->id);
+        $requested_posts = $join_request->where('user_id', $auths->id);
+        return view('show_rooms')->with(['myposts' => $myposts->get()])
+                                 ->with(['requested_posts' => $requested_posts->get()]);
+    }
+
+    public function talk_room(Join_request $join_request, User $user, Post $post)
+    {
+        $auths = Auth::user();
+        return view('talk_room')->with(['post' => $post]);
     }
 }
