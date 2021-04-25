@@ -28,6 +28,7 @@
                 </div>
                 <a class="myposts" href="/posts/myposts">投稿記事一覧</a>
                 <a class="edit" href="/posts/mypage/profile_edit">プロフィール編集</a>
+                <a class="request_conf" href="/posts/mypage/request_conf">リクエスト確認</a>
                 <br>
                 <a class="back" href="/posts">戻る</a>
             </div>

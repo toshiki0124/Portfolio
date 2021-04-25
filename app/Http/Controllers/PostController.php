@@ -71,6 +71,17 @@ class PostController extends Controller
         return view('profile_edit')->with(['auths' => $auths]);
     }
 
+    public function request_conf(Join_request $join_request, Post $post, User $user)
+    {
+        $auths = Auth::user();
+        $requested_posts = $post->where('user_id', $auths->id);
+        return view('request_conf')->with(['auths' => $auths])
+                                   ->with(['requested_posts' => $requested_posts->get()])
+                                   ->with(['join_requests' => $join_request->get()])
+                                   ->with(['posts' => $post->get()])
+                                   ->with(['users' => $user->get()]);
+    }
+
     public function store(Request $request, Post $post)
     {
         $input = $request['post'];
@@ -117,5 +128,25 @@ class PostController extends Controller
         $join_request->fill($path)->save();
 
         return redirect('/posts/' . $post->id);
+    }
+
+    public function request_approval(Request $request, Join_request $join_request, Post $post,
+    Auth $auths)
+    {
+        $pass['to_distinguish_number'] = (int)$request['to_distinguish_number'];
+        $join_request->fill($pass)->save();
+
+        return redirect('/posts/mypage/request_conf');
+    }
+
+    public function request_disapproval(Join_request $join_request)
+    {
+        $join_request->delete();
+        return redirect('/posts/mypage/request_conf');
+    }
+
+    public function show_rooms(Join_request $join_request, User $user, Post $post)
+    {
+        return view('show_rooms')
     }
 }

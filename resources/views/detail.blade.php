@@ -17,8 +17,7 @@
                 <p class="prefecture">都道府県 : {{ $post->place->name }}</p>
                 <p class="prefecture"> 詳細場所 : {{ $post->detail_place }}</p>
                 <p class="prefecture">自由コメント : {{ $post->body }}</p>
-                <p class="prefecture">投稿者 : {{ $post->user->name }}</p>
-                <P class="file_image">プロフィール画像 : 画像のサイズ調整してから記述</p>
+                <p class="prefecture">投稿者 : {{ $post->user->name }}(投稿者のプロフィール見られる様にする)</p>
                 <a href="/posts">戻る</a>
                 @if ($post->user_id == $auths->id)
                     <br>

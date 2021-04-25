@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->belengsToMany('App\Post');
     }
+
+    public function join_requests()
+    {
+        return $this->hasMany('App\Join_request');
+    }
 }

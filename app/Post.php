@@ -19,6 +19,11 @@ class Post extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function join_requests()
+    {
+        return $this->hasMany('App\Join_request');
+    }
+
     protected $fillable = [
         'title',
         'place_id',
