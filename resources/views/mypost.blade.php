@@ -23,16 +23,16 @@
                 <form action="/posts/{{ $post->id }}" id="form_delete" method="POST" sytle="display:inline">
                     @csrf 
                     @method('DELETE')
-                    <button type="submit"><span onclick="return deletePost(this)">削除</span></botton>
+                    <button type="button"><span onclick="return deletePost(this);">削除</span></botton>
                 </form>
             </div>
         </div>
         
         <script>
             function deletePost(e) {
-                'use strict'
+                'use strict';
                 if (confirm('削除すると復元できません。\n本当に削除しますか？'))　{
-                    document.getElementBy('form_delete').submit();
+                    document.getElementById('form_delete').submit();
                 }
             }
         </script>

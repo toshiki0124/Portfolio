@@ -36,6 +36,15 @@ class Post extends Model
     {
         return $this->belongsToMany('App\User');
     }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleted(function ($post) {
+            $post->join_requests()->delete();
+        });
+    }
 }
 
 

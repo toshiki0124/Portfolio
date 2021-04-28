@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Join_request extends Model
 {
+    use softDeletes;
+
     public function post()
     {
         return $this->belongsTo('App\Post');

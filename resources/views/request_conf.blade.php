@@ -25,10 +25,10 @@
                                     @method("PUT")
                                     <button type="submit" name="to_distinguish_number" value="1">許可</button>
                                 </form>
-                                <form action="/posts/mypage/request_disapproval/{{ $join_request->id }}" method="POST">
+                                <form action="/posts/mypage/request_disapproval/{{ $join_request->id }}" id="disapproval_form" method="POST">
                                     @csrf
                                     @method("DELETE")
-                                    <button type="submit">許否</button>
+                                    <button type="button"><span onclick="return request_disapproval(this)">許否</span></button>
                                 </form>
                             @else
                                 <button type="button">許可済</button>
@@ -38,5 +38,13 @@
                 @endforeach
             </div>
         </div>
+        <script>
+            function request_disapproval (e) {
+                    'use strict';
+                    if (confirm('一度拒否すると戻せません。\n拒否しますか？'))　{
+                        document.getElementById('disapproval_form').submit();
+                    }
+                }
+        </script>
     </body>
 </html>
