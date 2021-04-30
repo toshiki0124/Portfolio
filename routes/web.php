@@ -10,6 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//test
+Route::get('/test', function (){
+    return view('test');
+});
+
+//PostController
 Route::get('/', 'PostController@index');
 Route::get('/posts', 'PostController@post')->middleware('auth');
 Route::get('/posts/create', 'PostController@create')->middleware('auth');
@@ -22,7 +29,6 @@ Route::get('/posts/{post}', 'PostController@detail')->middleware('auth');
 Route::get('/posts/{post}/mypost', 'PostController@mypost')->middleware('auth');
 Route::get('/posts/{post}/mypost/edit', 'PostController@myedit')->middleware('auth');
 Route::get('/posts/{post}/edit', 'PostController@edit')->middleware('auth');
-Route::get('/posts/rooms/{post}/room', 'PostController@talk_room')->middleware('auth');
 Route::get('/posts/detail/host_profile/{user}', 'PostController@host_profile')->middleware('auth');
 
 Route::post('/posts/mypage', 'PostController@image_upload');
@@ -34,6 +40,12 @@ Route::put('/posts/{post}', 'PostController@update');
 Route::delete('/posts/{post}', 'PostController@delete');
 Route::delete('/posts/mypage/request_disapproval/{join_request}', 'PostController@request_disapproval');
 
+//ChatController
+Route::get('/posts/rooms/{post}/room', 'ChatController@talk_room')->middleware('auth');
+
+//Ajax\ChatController
+Route::get('ajax/chat', 'Ajax\ChatController@index'); // メッセージ一覧を取得
+Route::post('ajax/chat', 'Ajax\ChatController@create'); // チャット登録
 
 Auth::routes();
 

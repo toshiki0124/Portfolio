@@ -8,6 +8,7 @@ use App\Post;
 use App\Place;
 use App\Test;
 use App\Join_request;
+use App\Message;
 use Auth;
 
 class PostController extends Controller
@@ -156,11 +157,5 @@ class PostController extends Controller
         $requested_posts = $join_request->where('user_id', $auths->id);
         return view('show_rooms')->with(['myposts' => $myposts->get()])
                                  ->with(['requested_posts' => $requested_posts->get()]);
-    }
-
-    public function talk_room(Join_request $join_request, User $user, Post $post)
-    {
-        $auths = Auth::user();
-        return view('talk_room')->with(['post' => $post]);
     }
 }

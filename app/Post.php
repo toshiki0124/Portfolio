@@ -45,6 +45,11 @@ class Post extends Model
             $post->join_requests()->delete();
         });
     }
+
+    public function messages()
+    {
+        return $this->hasMany('App\Message');
+    }
 }
 
 
