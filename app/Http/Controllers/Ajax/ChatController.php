@@ -4,13 +4,15 @@ namespace App\Http\Controllers\Ajax;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Message;
 use App\Post;
 use Auth;
 
 class ChatController extends Controller
 {
+    
     public function index() {
-        return \App\Message::orderBy('id', 'desc')->get();
+        return \App\Message::with('user')->orderBy('id', 'desc')->get();
     }
     
     public function create(Request $request) {
