@@ -19,10 +19,11 @@
                     <textarea v-model="message"></textarea>{{--入力された値はdataのmessageに入る、vーmodelにより--}}
                     <br>
                     <button type="button" @click="send">送信</button>
-                
                     <div v-for="message in messages">
-                        <span v-text="message.user.name"></span>：&nbsp;
-                        <span v-text="message.body"></span>
+                        <div v-if="post_id == message.post.id">
+                            <span v-text="message.user.name"></span>：&nbsp;
+                            <span v-text="message.body"></span>
+                        </div>
                     </div>
                     
                 </div>

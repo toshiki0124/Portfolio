@@ -12,7 +12,7 @@ class ChatController extends Controller
 {
     
     public function index() {
-        return \App\Message::with('user')->orderBy('id', 'desc')->get();
+        return \App\Message::with('user')->with('post')->orderBy('id', 'desc')->get();
     }
     
     public function create(Request $request) {
