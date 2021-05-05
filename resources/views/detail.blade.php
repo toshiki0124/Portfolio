@@ -12,7 +12,7 @@
                 <p class="prefecture">都道府県 : {{ $post->place->name }}</p>
                 <p class="detail_place"> 詳細場所 : {{ $post->detail_place }}</p>
                 <p class="comment">自由コメント : {{ $post->body }}</p>
-                <p class="host_name">投稿者 : {{ $post->user->name }}(投稿者のプロフィール見られる様にする)</p>
+                <p class="host_name">投稿者 : {{ $post->user->name }}</p>
                 <a class="host_profile" href="/posts/detail/host_profile/{{ $post->user->id }}">プロフィール情報</a>
                 <div class="request">
                     @if ($post->user_id == $auths->id)
