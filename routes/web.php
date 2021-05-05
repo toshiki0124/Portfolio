@@ -13,7 +13,8 @@
 
 //test
 Route::get('/test', function (){
-    return view('test');
+    $test = ['id' => 1, 'name' => 'メールの確認']; 
+    event(new MessageCreated($test));
 });
 
 //PostController

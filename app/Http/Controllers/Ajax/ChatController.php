@@ -19,10 +19,12 @@ class ChatController extends Controller
 
         $auths = Auth::user();
 
-        \App\Message::create([
+        $message = \App\Message::create([
             'body' => $request->message,
             'user_id' => $auths->id,
             'post_id' => $request->post_id
         ]);
+        
+        //event(new MessageCreated($message));
     }
 }

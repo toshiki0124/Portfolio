@@ -10,6 +10,7 @@ use App\Test;
 use App\Join_request;
 use App\Message;
 use Auth;
+use Storage;
 
 class PostController extends Controller
 {
@@ -109,9 +110,12 @@ class PostController extends Controller
     {   
         $input_user = $request['user'];
         if (isset($input_user['file_name'])){
-            $path = $input_user['file_name']->store('public/images');
-            $filename = basename($path);
-            $input_user['file_name'] = $path;
+            //受け取ったファイルの情報をimageに代入
+            $image = $input_user['file_name'];
+            //バケットのmyprefixフォルダへアップロード
+            $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
+            //アップロードした画像のパス取得
+            $input_user['file_name'] = Storage::disk('s3')->url($path);
         } else {
             ;
         }
