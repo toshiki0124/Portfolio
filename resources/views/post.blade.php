@@ -8,7 +8,7 @@
     <body>
         <header>
             <div class="container">
-                <h1>Portfolio</h1>
+                <h1>Tennis Mathcing</h1>
                 <a href="posts/mypage" class="enter">個人ページ</a>
                 <a href="posts/rooms" class="enter">参加ルーム</a>
             </div>

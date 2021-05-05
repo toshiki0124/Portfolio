@@ -8,7 +8,7 @@
     <body>
         <header>
             <div class="container">
-                <h1>Portfolio</h1>
+                <h1>Tennis Matching</h1>
                 <a href="/register" class="enter">新規登録</a>
                 <a href="/login" class="enter">ログイン</a>
             </div>
