@@ -1,20 +1,13 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Portfolio</title>
-    </head>
-    <body>
-        <header>
-            <div class="container">
-                <h1>Tennis Mathcing</h1>
-                <a href="posts/mypage" class="enter">個人ページ</a>
-                <a href="posts/rooms" class="enter">参加ルーム</a>
-            </div>
-        </header>
+@extends('layouts.app')
+
+@section('content')
         <div class="post_strage">
             <div class="container">
+                <div class="menu">
+                    <a href="posts/mypage" class="enter"><h3>個人ページ</h3></a>
+                    <a href="posts/rooms" class="enter"><h3>参加ルーム</h3></a>
+                    <br>
+                </div>
                 <h1>投稿一覧</h1>
                 @foreach ($posts as $post)
                     <div class="post">
@@ -24,5 +17,4 @@
                 <a href="/posts/create">新規投稿</a>
             </div>
         </div>
-    </body>
-</html>
+@endsection

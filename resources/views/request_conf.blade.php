@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Portfolio</title>
-    </head>
-    <body>
-        <header>
+@extends('layouts.app')
+
+@section('content')
+        <div class="page_title">
             <div class="container">
                 <h1>リクエスト確認ページ</h1>
-                <button onclick="history.back()">戻る</button>
             </div>
-        </header>
+        </div>
         <div class="requested">
             <div class="container">
                 @foreach ($join_requests as $join_request)
                     @if ($join_request->user_id != $auths->id)
                         @if ($join_request->post->user_id == $auths->id)
-                            <p>{{ $join_request->post->title }}</p>
-                            <p>「{{ $join_request->user->name }}」からのリクエスト</p>
+                            <h5>{{ $join_request->post->title }}</h5>
+                            <h5>「{{ $join_request->user->name }}」からのリクエスト</h5>
                             @if ($join_request->to_distinguish_number == 0)
                                 <form action="/posts/mypage/request_approval/{{ $join_request->id }}" method="POST">
                                     @csrf
@@ -36,6 +30,8 @@
                         @endif
                     @endif
                 @endforeach
+                <br>
+                <a href="/posts/mypage">戻る</a>
             </div>
         </div>
         <script>
@@ -46,5 +42,4 @@
                     }
                 }
         </script>
-    </body>
-</html>
+@endsection

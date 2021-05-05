@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Portfolio</title>
-    </head>
-    <body>
-        <header>
+@extends('layouts.app')
+
+@section('content')
+        <div class="page_title">
             <div class="container">
                 <h1>参加ルーム一覧</h1>
             </div>
-        </header>
+        </div>
         <div class="post_strage">
             <div class="container">
                 <h3>自己がホストのルーム</h3>
@@ -30,5 +25,4 @@
                 <a class="back" href="/posts">戻る</a>
             </div>
         </div>
-    </body>
-</html>
+@endsection
