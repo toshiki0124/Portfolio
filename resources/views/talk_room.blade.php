@@ -3,13 +3,6 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Portfolio</title>
-    </head>
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -76,12 +69,15 @@
             </nav>
         </div>
         <br>
+        
+        <!-- ここからが自分のコード -->
 
         <div class="page_title">
             <div class="container">
                 <h1>『{{ $post->title }}』のトークルーム</h1>
-                <p>※送信後、リロードを行えばメッセージが反映されます。</p>
                 <!-- pusherの機能がうまく行っていないため -->
+                <p>※送信後、リロードを行えばメッセージが反映されます。</p>
+                <!-- 参加しているメンバーの表示とかも行えたらいいかも -->
             </div>
         </div>
 
@@ -89,11 +85,12 @@
             <div class="container">
 
                 <div id="chat">
-
+                    <!-- sendの実行 -->
                     <textarea v-model="message"></textarea>{{--入力された値はdataのmessageに入る、vーmodelにより--}}
                     <br>
                     <button type="button" @click="send">送信</button>
 
+                    <!-- メッセージの取得、表示 -->
                     <div v-for="message in messages">
                         <div v-if="post_id == message.post.id">
                             <span v-text="message.user.name"></span>：&nbsp;
