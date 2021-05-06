@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Ajax;
 
-use App\Events\MessageCreated;
+use App\Events\MessageCreated;//エラーの原因、絶対忘れちゃダメ
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Message;

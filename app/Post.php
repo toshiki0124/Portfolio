@@ -42,7 +42,10 @@ class Post extends Model
         parent::boot();
 
         static::deleted(function ($post) {
+
             $post->join_requests()->delete();
+            
+            $post->messages()->delete();
         });
     }
 

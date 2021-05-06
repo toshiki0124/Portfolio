@@ -24,10 +24,12 @@ class PostController extends Controller
         return view('post')->with(['posts' => $post->get()]);
     }
 
+    // 記事の詳細表示
     public function detail(Post $post, Join_request $join_request)
     {
         $to_distinguish_number = 0;
         $auths = Auth::user();
+        
         return view('detail')->with(['post' => $post])
                              ->with(['auths' => $auths])
                              ->with(['join_requests' => $join_request->get()])
@@ -52,6 +54,7 @@ class PostController extends Controller
     public function mypage()
     {
         $auths = Auth::user();
+
         return view('mypage')->with(['auths' => $auths]);
     }
 
@@ -59,6 +62,7 @@ class PostController extends Controller
     {
         $auths = Auth::id();
         $posts = User::find($auths)->posts;
+
         return view('myposts')->with(['posts' => $posts]);
     }
 
@@ -75,13 +79,16 @@ class PostController extends Controller
     public function profile_edit()
     {
         $auths = Auth::user();
+
         return view('profile_edit')->with(['auths' => $auths]);
     }
 
+    // リクエスト確認ページ
     public function request_conf(Join_request $join_request, Post $post, User $user)
     {
         $auths = Auth::user();
         $requested_posts = $post->where('user_id', $auths->id);
+
         return view('request_conf')->with(['auths' => $auths])
                                    ->with(['requested_posts' => $requested_posts->get()])
                                    ->with(['join_requests' => $join_request->get()])
@@ -89,6 +96,7 @@ class PostController extends Controller
                                    ->with(['users' => $user->get()]);
     }
 
+    // 記事投稿
     public function store(Request $request, Post $post)
     {
         $input = $request['post'];
@@ -98,6 +106,7 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
 
+    // 記事編集
     public function update(Request $request, Post $post)
     {
         $input_post = $request['post'];
@@ -106,6 +115,7 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
 
+    // プロフィール編集、ここで初めてプロフ画の設定可能
     public function profile_update(Request $request)
     {   
         $input_user = $request['user'];
@@ -119,6 +129,7 @@ class PostController extends Controller
         } else {
             ;
         }
+
         $auths = Auth::user();
         $auths->fill($input_user)->save();
 
@@ -128,9 +139,11 @@ class PostController extends Controller
     public function delete(Post $post)
     {
         $post->delete();
+
         return redirect('/posts');
     }
 
+    // 参加リクエストボタンが押された時の処理
     public function join_request(Request $request, Join_request $join_request, Post $post)
     {
         $path['user_id'] = (int)$request['user_id'];
@@ -140,6 +153,7 @@ class PostController extends Controller
         return redirect('/posts/' . $post->id);
     }
 
+    // ホストが、参加を許可した時の処理　数字の「0」「1」で判断
     public function request_approval(Request $request, Join_request $join_request, Post $post)
     {
         $pass['to_distinguish_number'] = (int)$request['to_distinguish_number'];
@@ -148,17 +162,21 @@ class PostController extends Controller
         return redirect('/posts/mypage/request_conf');
     }
 
+    // ホストが参加を拒否した時の処理
     public function request_disapproval(Join_request $join_request)
     {
         $join_request->delete();
+
         return redirect('/posts/mypage/request_conf');
     }
 
     public function show_rooms(Join_request $join_request, User $user, Post $post)
     {
         $auths = Auth::user();
+        // データの絞り込み
         $myposts = $post->where('user_id', $auths->id);
         $requested_posts = $join_request->where('user_id', $auths->id);
+
         return view('show_rooms')->with(['myposts' => $myposts->get()])
                                  ->with(['requested_posts' => $requested_posts->get()]);
     }
