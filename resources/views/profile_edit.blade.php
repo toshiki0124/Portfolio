@@ -15,7 +15,7 @@
                         <br>
                         <h4>画像選択</h4>
                         <input type="file" name="user[file_name]" accept=".png,.jpg,.jpeg,image/png,image/jpg">
-                        <p>元の画像<br><img src="{{ $auths->file_name }}"></p>
+                        <p>元の画像<br><img src="{{ $auths->file_name }}" width=160px height=100px></p>
                     </div>
                     <div class="name">
                         <h5>名前</h5>

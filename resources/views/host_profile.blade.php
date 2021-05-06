@@ -12,7 +12,7 @@
                     <h3>名前:{{ $user->name }}</h3>
                 </div>
                 <div class="profile_image">
-                    <img src="{{ $user->file_name }}" title="プロフィール画像">
+                    <img src="{{ $user->file_name }}" title="プロフィール画像" width=160px height=100px>
                 </div>
                 <div class="body">
                     <h5>コメント:{{ $user->body }}</h5>

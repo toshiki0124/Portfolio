@@ -68,6 +68,7 @@
                 </div>
             </nav>
         </div>
+
         <br>
         
         <!-- ここからが自分のコード -->
@@ -75,8 +76,6 @@
         <div class="page_title">
             <div class="container">
                 <h1>『{{ $post->title }}』のトークルーム</h1>
-                <!-- pusherの機能がうまく行っていないため -->
-                <p>※送信後、リロードを行えばメッセージが反映されます。</p>
                 <!-- 参加しているメンバーの表示とかも行えたらいいかも -->
             </div>
         </div>
@@ -116,13 +115,10 @@
                 },
                 methods: {
                     getMessages() {
-
                         const url = '/ajax/chat';
                         axios.get(url)
                             .then((response) => {
-
                                 this.messages = response.data;
-
                             });
                     },
                     send() {
@@ -140,10 +136,8 @@
                     
                     Echo.channel('chat')
                         .listen('MessageCreated', (e) => {
-
-                            this.getMessages(); // メッセージを再読込
-
-                        });
+                                this.getMessages(); // メッセージを再読込
+                            });
                     
                 }
             });

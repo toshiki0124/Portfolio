@@ -13,7 +13,7 @@
                     <h4>名前:{{ $auths->name }}</h4>
                 </div>
                 <div class="profile_image">
-                    <img src="{{ $auths->file_name }}" title="プロフィール画像">
+                    <img src="{{ $auths->file_name }}" title="プロフィール画像" width=160px height=100px>
                 </div>
                 <div class="body">
                     <h5>コメント:{{ $auths->body }}</h5>

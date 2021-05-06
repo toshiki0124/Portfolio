@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Ajax;
 
+use App\Events\MessageCreated;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Message;
@@ -25,6 +26,6 @@ class ChatController extends Controller
             'post_id' => $request->post_id
         ]);
         
-        //event(new MessageCreated($message));
+        event(new MessageCreated($message));
     }
 }
