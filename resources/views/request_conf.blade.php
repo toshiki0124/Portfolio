@@ -11,7 +11,7 @@
                 @foreach ($join_requests as $join_request)
                     @if ($join_request->user_id != $auths->id)
                         @if ($join_request->post->user_id == $auths->id)
-                            <h5>{{ $join_request->post->title }}</h5>
+                            <h5 class="pt-4">{{ $join_request->post->title }}</h5>
                             <h5>「{{ $join_request->user->name }}」からのリクエスト</h5>
                             @if ($join_request->to_distinguish_number == 0)
                                 <form action="/posts/mypage/request_approval/{{ $join_request->id }}" method="POST">
@@ -30,8 +30,9 @@
                         @endif
                     @endif
                 @endforeach
-                <br>
-                <a href="/posts/mypage">戻る</a>
+                <div class="pt-4">
+                    <a href="/posts/mypage">戻る</a>
+                </div>
             </div>
         </div>
         <script>
