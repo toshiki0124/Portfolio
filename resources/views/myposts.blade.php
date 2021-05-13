@@ -7,12 +7,12 @@
                 <h1>投稿した記事</h1>
             </div>
         </div>
-        
+
         <div class="my_posts">
             <div class="container">
 
                 @foreach ($posts as $post)
-                    <a class="title" href="/posts/{{ $post->id }}/mypost">{{ $post->title }}</a>
+                    <a href="/posts/{{ $post->id }}/mypost">{{ $post->title }}</a>
                     <br>
                 @endforeach
                 
