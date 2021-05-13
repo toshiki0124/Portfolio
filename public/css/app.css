@@ -107,9 +107,20 @@ body {
   transform: rotate(-5deg);
 }
 
-.guest-accont {
-  padding-top: 40px;
+.guest-account {
+  margin-top: 40px;
   font-size: 15px;
+  display       : inline-block;        
+  padding       : 3px 0;               
+  border-bottom : 5px double rgb(255, 0, 0, 0.7); 
+}
+
+.account-info {
+  font-size: 15px;
+}
+
+.create { 
+  font-size: 20px;
 }
 
 /* ポストのタイトルに対して */

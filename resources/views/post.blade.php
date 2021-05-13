@@ -9,7 +9,7 @@
                         <a href="/posts/{{ $post->id }}"><h2 class="title">{{ $post->title }}</h2></a>
                     </div>
                 @endforeach
-                <a href="/posts/create">新規投稿</a>
+                <a href="/posts/create" class="create">新規投稿</a>
             </div>
         </div>
 @endsection

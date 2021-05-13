@@ -3,7 +3,7 @@
 @section('content')
         <div class="page_title">
             <div class="container">
-                <h1>参加ルーム一覧</h1>
+                <h1 class="pb-3">参加ルーム一覧</h1>
             </div>
         </div>
         

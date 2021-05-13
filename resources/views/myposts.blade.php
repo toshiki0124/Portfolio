@@ -4,7 +4,7 @@
 @section('content')
         <div class="page_title">
             <div class="container">
-                <h1>投稿した記事</h1>
+                <h1 class="pb-3">投稿した記事</h1>
             </div>
         </div>
 
@@ -12,11 +12,12 @@
             <div class="container">
 
                 @foreach ($posts as $post)
-                    <a href="/posts/{{ $post->id }}/mypost">{{ $post->title }}</a>
-                    <br>
+                    <div class="pb-1">
+                        <a href="/posts/{{ $post->id }}"><h2 class="title">{{ $post->title }}</h2></a>
+                    </div>
                 @endforeach
                 
-                <a class="back" href="/posts">投稿一覧に戻る</a>
+                <a class="create" href="/posts">投稿一覧に戻る</a>
 
             </div>
         </div>
