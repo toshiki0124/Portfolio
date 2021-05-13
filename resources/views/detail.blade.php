@@ -16,7 +16,6 @@
                 <a class="host_profile" href="/posts/detail/host_profile/{{ $post->user->id }}">プロフィール情報</a>
                 <div class="request">
                     @if ($post->user_id == $auths->id)
-                        <br>
                         <button type="button">{{ $auths->name }}の投稿です</button>
                         @php
                             $number -= 1;
@@ -25,7 +24,6 @@
                         @foreach ($join_requests as $join_request)
                             @if ($post->id == $join_request->post_id)
                                 @if ($join_request->user_id == $auths->id)
-                                    <br>
                                     <button type="button">リクエスト済</button>
                                     @php
                                         $number -= 1;
