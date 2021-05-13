@@ -81,6 +81,37 @@ body {
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
+
+.introduction {
+  margin-top: 8%;
+  text-align: center;
+}
+
+.app-name {
+  font-size: 65px;
+  font-family: 'Times New Roman', Times, serif;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.description {
+  font-size: 21px;
+}
+
+.about-the-application {
+  padding-top: 60px;
+  padding-bottom: 20px;
+  color: rgba(3, 118, 194, 0.9);
+  font-style: oblique;
+  font-size: 30px;
+  font-family: 'Sacramento', cursive;
+  transform: rotate(-5deg);
+}
+
+.guest-accont {
+  padding-top: 40px;
+  font-size: 15px;
+}
+
 /* ポストのタイトルに対して */
 .title {
   display: inline-block;
