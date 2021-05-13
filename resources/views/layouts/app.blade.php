@@ -55,6 +55,18 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/posts/mypage">
+                                        プロフィール確認
+                                    </a>
+                                    <a class="dropdown-item" href="/posts/rooms">
+                                        トークルーム一覧
+                                    </a>
+                                    <a class="dropdown-item" href="/posts/myposts">
+                                        投稿記事一覧
+                                    </a>
+                                    <a class="dropdown-item" href="/posts/mypage/request_conf">
+                                        リクエスト確認
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

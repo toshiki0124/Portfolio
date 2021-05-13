@@ -6,6 +6,7 @@
                 <h1>参加ルーム一覧</h1>
             </div>
         </div>
+        
         <div class="post_strage">
             <div class="container">
                 <h3>自己がホストのルーム</h3>
@@ -22,7 +23,7 @@
                         @endif
                     @endforeach
                 </div>
-                <a class="back" href="/posts">戻る</a>
+                <a class="back" href="/posts">投稿一覧に戻る</a>
             </div>
         </div>
 @endsection
