@@ -14,7 +14,30 @@
     <li>laravel 6.20.20</li>
     <li>Postgres 13.2</li>
     <li>AWS</li>
-    ・s3
+        <ul type="circle">
+            <li>s3</li>
+        </ul>
     <li>Heroku</li>
     <li>Pusher Channels API</li>
+</ul>
+
+# 機能一蘭
+<ul>
+    <li>ユーザー登録、ログイン機能（laravel）</li>
+    <li>ユーザー情報編集機能</li>
+        <ul type="circle">
+            <li>画像アップロード</li>
+        </ul>
+    <li>投稿機能</li>
+        <ul type="circle">
+            <li>投稿</li>
+            <li>編集</li>
+            <li>削除</li>
+        </ul>
+    <li>参加リクエスト送信機能</li>
+    <li>受信したリクエストに対する拒否可否</li>
+        <ul type="circle">
+            <li>拒否時の確認ポップアップ表示</li>
+        </ul>
+    <li>リアルタイムチャット機能（Ajax）</li>
 </ul>
