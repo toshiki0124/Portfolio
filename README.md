@@ -21,7 +21,7 @@
     <li>Pusher Channels API</li>
 </ul>
 
-# 機能一蘭
+# 機能一覧
 <ul>
     <li>ユーザー登録、ログイン機能（laravel）</li>
     <li>ユーザー情報編集機能</li>
