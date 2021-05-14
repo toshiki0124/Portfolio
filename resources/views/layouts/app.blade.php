@@ -62,7 +62,7 @@
                                         トークルーム一覧
                                     </a>
                                     <a class="dropdown-item" href="/posts/myposts">
-                                        投稿記事一覧
+                                        投稿した記事一覧
                                     </a>
                                     <a class="dropdown-item" href="/posts/mypage/request_conf">
                                         リクエスト確認
