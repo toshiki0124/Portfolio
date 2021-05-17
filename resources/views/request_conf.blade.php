@@ -14,9 +14,15 @@
                     @if ($join_request->user_id != $auths->id)
 
                         @if ($join_request->post->user_id == $auths->id)
-
+                            <!-- 誰がリクエストしたかの処理 -->
                             <h5 class="pt-4">{{ $join_request->post->title }}</h5>
-                            <h5>「{{ $join_request->user->name }}」からのリクエスト</h5>
+                            <h5 style="display:inline;"> </h5>
+                            <h5>
+                                <a class="host_profile" href="/posts/detail/host_profile/{{ $join_request->user->id }}" style="display:inline;">
+                                「{{ $join_request->user->name }}」
+                                </a>
+                                からのリクエスト
+                            </h5>
 
                             @if ($join_request->to_distinguish_number == 0)
 
