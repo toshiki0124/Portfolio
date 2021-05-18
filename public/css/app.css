@@ -150,6 +150,10 @@ body {
   text-shadow: 2px 2px 1px rgba(1, 87, 185, 0.25);
 }
 
+.validation { 
+  color: rgba(255, 0, 0, 0.9);
+}
+
 hr {
   box-sizing: content-box;
   height: 0;

@@ -27,13 +27,13 @@ class PostController extends Controller
     // 記事の詳細表示
     public function detail(Post $post, Join_request $join_request)
     {
-        $to_distinguish_number = 0;
+        $number = 0;
         $auths = Auth::user();
         
         return view('detail')->with(['post' => $post])
                              ->with(['auths' => $auths])
                              ->with(['join_requests' => $join_request->get()])
-                             ->with(['number' => $to_distinguish_number]);
+                             ->with(['number' => $number]);
     }
 
     public function host_profile(User $user)
@@ -43,7 +43,8 @@ class PostController extends Controller
 
     public function create(Place $place)
     {
-        return view('create')->with(['places' => $place->get()]);
+        $number = 0;
+        return view('create')->with(['places' => $place->get()])->with(['number' => $number]);
     }
 
     public function edit(Post $post, Place $place)
@@ -101,6 +102,16 @@ class PostController extends Controller
     {
         $input = $request['post'];
         $post['user_id'] = Auth::id();
+
+        // バリデーション
+        $validatedData = $request->validate([
+            'post.title' => ['required', 'max:30'],
+            'post.detail_place' => ['required', 'max:200'],
+            'post.body' => ['max:255']
+        ]);
+        
+
+        // 保存
         $post->fill($input)->save();
         
         return redirect('/posts/' . $post->id);
