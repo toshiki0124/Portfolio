@@ -12,7 +12,7 @@
                     @csrf
                     @method('PUT')
 
-                    <div class="title">
+                    <div>
                         <h2>タイトル</h2>
                         <input type="text" name="post[title]" value="{{ $post->title }}"/>
                     </div>

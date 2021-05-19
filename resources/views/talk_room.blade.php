@@ -104,8 +104,8 @@
                     <!-- メッセージの取得、表示 -->
                     <div v-for="message in messages">
                         <div v-if="post_id == message.post.id">
-                            <span v-text="message.user.name"></span>：&nbsp;
-                            <span v-text="message.body"></span>
+                            <span v-text="message.user.name" class="chat_name"></span>：&nbsp;
+                            <span v-text="message.body" class="chat_message"></span>
                         </div>
                     </div>
 

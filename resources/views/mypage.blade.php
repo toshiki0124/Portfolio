@@ -9,12 +9,12 @@
 
         <div class="my_contents">
             <div class="container">
-                <div class="name">
+                <div class="name pb-3">
                     <br>
                     <h4>名前 : {{ $auths->name }}</h4>
                 </div>
 
-                <div class="profile_image">
+                <div class="profile_image pb-3">
                     @if ($auths->file_name == NULL)
                         <h5>画像 : 未設定</h5>
                     @else
@@ -22,15 +22,15 @@
                     @endif
                 </div>
 
-                <div class="body">
+                <div class="body pb-3">
                     <h5>コメント : {{ $auths->body }}</h5>
                 </div>
 
-                <div class="age">
+                <div class="age pb-3">
                     <h5>年齢 : {{ $auths->age }}</h5>
                 </div>
 
-                <a class="back" href="/posts/mypage/profile_edit">
+                <a href="/posts/mypage/profile_edit">
                                         プロフィール編集
                 </a>
 

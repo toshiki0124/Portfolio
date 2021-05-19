@@ -139,6 +139,20 @@ body {
   border: 1px solid rgba(224, 207, 180, 0.4);
 }
 
+.see_title {
+  display: inline-block;
+  border-radius: 5%;
+  padding: 10px 10px;
+  margin-top: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(42, 113, 122, 0.918);
+  font-weight: 450;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1em;
+  box-shadow: 3px 3px 1px #666666;
+  border: 1px solid rgba(224, 207, 180, 0.4);
+}
+
 .title:hover {
   box-shadow:  none;
   background: rgba(0, 0, 0, 0.03);
@@ -152,6 +166,44 @@ body {
 
 .validation { 
   color: rgba(255, 0, 0, 0.9);
+}
+
+.chat_name {
+  color: rgba(42, 113, 122, 0.918);
+  font-weight: 600;
+}
+
+.chat_message {
+  display: inline-block;
+  display: inline-block;
+  border-radius: 5%;
+  padding: 10px 10px;
+  margin-top: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(42, 113, 122, 0.918);
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1em;
+  box-shadow: 3px 3px 1px #666666;
+  border: 1px solid rgba(224, 207, 180, 0.4);
+}
+
+.post_detail {
+  color: rgba(32, 102, 109, 0.9);
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 45px;
+}
+
+.host_profile {
+  color: rgba(32, 102, 109, 0.9);
+  padding-top: 25px;
+}
+
+.my_contents {
+  color: rgba(32, 102, 109, 0.9);
+  font-weight: bold;
+  font-size: 20px;
 }
 
 hr {

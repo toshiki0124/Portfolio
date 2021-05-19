@@ -9,7 +9,7 @@
         <div class="post_detail">
             <div class="container">
 
-                <h2>タイトル：{{ $post->title }}</h2>
+                <h2>タイトル：<span class="see_title">{{ $post->title }}</span></h2>
 
                 <p class="prefecture">都道府県 : {{ $post->place->name }}</p>
 
