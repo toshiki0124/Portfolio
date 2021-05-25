@@ -27,7 +27,7 @@
                         
                         @if ($requested_post->to_distinguish_number == 1)
                             <ul>
-                                <li class="title pr-4 pl-4"><a href="/posts/rooms/{{ $mypost->id }}/room">{{ $requested_post->post->title }}</a></li>
+                                <li class="title pr-4 pl-4"><a href="/posts/rooms/{{ $requested_post->post->id }}/room">{{ $requested_post->post->title }}</a></li>
                             </ul>
                         @endif
 
