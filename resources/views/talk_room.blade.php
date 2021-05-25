@@ -52,13 +52,13 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/posts/mypage">
-                                        プロフィール確認
+                                        プロフィール
                                     </a>
                                     <a class="dropdown-item" href="/posts/rooms">
-                                        トークルーム一覧
+                                        トークルーム
                                     </a>
                                     <a class="dropdown-item" href="/posts/myposts">
-                                        投稿した記事一覧
+                                        投稿した記事
                                     </a>
                                     <a class="dropdown-item" href="/posts/mypage/request_conf">
                                         リクエスト確認
