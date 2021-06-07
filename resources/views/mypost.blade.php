@@ -20,9 +20,9 @@
 
                 <p class="prefecture">投稿者 : {{ $post->user->name }}</p>
                 
-                <button onclick="history.back()">戻る</button>
+                <button onclick="history.back()">戻る</button><br>
 
-                <a href="/posts/{{ $post->id }}/mypost/edit" class="back">編集</a>
+                <button onclick="location.href='/posts/{{ $post->id }}/mypost/edit'">編集</button>
 
                 <form action="/posts/{{ $post->id }}" id="form_delete" method="POST" sytle="display:inline">
                     @csrf 
