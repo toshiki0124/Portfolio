@@ -21,7 +21,7 @@ class PostController extends Controller
 
     public function post(Post $post)
     {
-        return view('post')->with(['posts' => $post->get()]);
+        return view('post')->with(['posts' => $post->getPaginateByLimit()]);
     }
 
     // 記事の詳細表示

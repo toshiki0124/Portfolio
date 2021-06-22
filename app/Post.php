@@ -53,6 +53,11 @@ class Post extends Model
     {
         return $this->hasMany('App\Message');
     }
+
+    public function getPaginateBylimit(int $limit_count = 7)
+    {
+        return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
+    }
 }
 
 

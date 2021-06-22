@@ -10,6 +10,10 @@
                     </div>
                 @endforeach
                 <a href="/posts/create" class="create">新規投稿</a>
+
+                <div class='paginate, pt-3'>
+                    {{ $posts->links() }} 
+                </div>
             </div>
         </div>
 @endsection
